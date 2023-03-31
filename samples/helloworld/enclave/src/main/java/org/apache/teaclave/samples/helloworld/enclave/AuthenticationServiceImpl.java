@@ -15,15 +15,23 @@
 // specific language governing permissions and limitations
 // under the License.
 
-package org.apache.teaclave.javasdk.samples.helloworld.enclave;
+package org.apache.teaclave.samples.helloworld.enclave;
 
-import org.apache.teaclave.javasdk.samples.helloworld.common.Service;
+import org.apache.teaclave.javasdk.samples.helloworld.common.AuthenticationService;
 import com.google.auto.service.AutoService;
 
-@AutoService(Service.class)
-public class ServiceImpl implements Service {
+@AutoService(AuthenticationService.class)
+public class AuthenticationServiceImpl implements AuthenticationService {
+
+    private String pwd = "somePwd"; // assume it's got at runtime.
+
     @Override
-    public String sayHelloWorld() {
-        return "Hello World";
+    public boolean authenticate(String inputPwd) {
+        String decryptedInputPwd = decrypt(inputPwd);
+        return pwd.equals(decryptedInputPwd);
+    }
+
+    private static String decrypt(String inputPwd) {
+        return inputPwd; // assume it's decrypted with private key
     }
 }

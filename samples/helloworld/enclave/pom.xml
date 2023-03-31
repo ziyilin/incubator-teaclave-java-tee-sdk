@@ -17,7 +17,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>org.apache.teaclave.javasdk.samples.helloworld</groupId>
     <parent>
-        <groupId>org.apache.teaclave.javasdk.samples</groupId>
+        <groupId>org.apache.teaclave.samples</groupId>
         <artifactId>helloworld</artifactId>
         <version>1.0-SNAPSHOT</version>
     </parent>

@@ -20,6 +20,11 @@ package org.apache.teaclave.javasdk.samples.helloworld.common;
 import org.apache.teaclave.javasdk.common.annotations.EnclaveService;
 
 @EnclaveService
-public interface Service {
-    String sayHelloWorld();
+public interface AuthenticationService {
+    /**
+     * Given an encrypted input password, check if it is the correct password.
+     * @param inputPwd the encrypted password to be authenticated
+     * @return true if the given password is correct.
+     */
+    boolean authenticate(String inputPwd);
 }
